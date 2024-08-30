@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Business Main</title>
+        <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css' rel='stylesheet' />
+        <link rel="stylesheet" href="/cs_s/maincss.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    </head>
+<body>
+    <div class="head">
+        <a href="/html/income.html" class="link"><p>Enter Income</p></a>
+        <a href="/html/personalExpenses.html" class="link"><p>Enter Expenses</p></a>
+        <a href="" class="link"><p> monthly Expenses chart</p> </a>
+        <a href="..\login.html" class="link"><p>Log Out</p></a>
+    </div>
+    <div class="body">
+        <div class="container">
+            <div class="controls">
+                <label for="year-select">Select Year:</label>
+                <select id="year-select"></select>
+
+                <label for="month-select">Select Month:</label>
+                <select id="month-select">
+                    <option value="0">January</option>
+                    <option value="1">February</option>
+                    <option value="2">March</option>
+                    <option value="3">April</option>
+                    <option value="4">May</option>
+                    <option value="5">June</option>
+                    <option value="6">July</option>
+                    <option value="7">August</option>
+                    <option value="8">September</option>
+                    <option value="9">October</option>
+                    <option value="10">November</option>
+                    <option value="11">December</option>
+                </select>
+            </div>
+            <div id="calendar"></div>
+        </div>
+        <div id="event-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modal-title">Add Event</h2>
+                <form id="event-form">
+                    <label for="event-title">Event Title:</label>
+                    <input type="text" id="event-title" required placeholder="Enter event title">
+                    
+                    <label for="event-date">Event Date:</label>
+                    <input type="text" id="event-date" readonly>
+                    
+                    <button type="submit" id="save-button">Add Event</button>
+                    <button type="button" id="delete-button" style="display:none;">Delete Event</button>
+                </form>
+            </div>
+        </div>
+        <div class="chart-container">
+            <h1>pie-chart</h1>
+            <Canvas id="myChart"></Canvas>
+        </div>
+        </div>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js'></script>
+    <script src="/java_script/monthlypiechart.js"></script>
+    <script src="/java_script/mainjs.js"></script>
+</body>
+</html>
